@@ -9,9 +9,11 @@ const ClassRosterPage = () => {
   const [students, setStudents] = useState([]);
 
   useEffect(() => {
+    // apiフォルダのapiルートからデータを取得
     fetch("/api/students")
       .then((response) => response.json())
-      .then((data) => setStudents(data));
+      .then((data) => setStudents(data))
+      .catch((error) => console.error("Error fetching students:", error));
   }, []);
 
   return (
