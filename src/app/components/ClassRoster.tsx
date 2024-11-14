@@ -6,6 +6,7 @@ import Link from "next/link";
 type Student = {
   id: number;
   name: string;
+  studentNumber: number;
   position: string;
 };
 
@@ -20,6 +21,7 @@ const ClassRoster: React.FC<Props> = ({ students }) => {
         <div key={student.id}>
           <h3>{student.id}</h3>
           <h3>{student.name}</h3>
+          <p>学籍番号: {student.studentNumber}</p>
           <p>Position: {student.position}</p>
           <Link href={`/students/${student.id}`}>more</Link>
         </div>
