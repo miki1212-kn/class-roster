@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useReducer } from "react";
-import Link from "next/link";
+// import React, { useReducer } from "react";
+// import Link from "next/link";
 import { useRouter } from "next/router";
 
 const StudentDetails = () => {
