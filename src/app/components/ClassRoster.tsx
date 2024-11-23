@@ -17,7 +17,7 @@ type Props = {
 const ClassRoster: React.FC<Props> = ({ students }) => {
   return (
     <>
-      {students.map((student) => (
+      {/* {students.map((student) => (
         <div key={student.id}>
           <h3>{student.id}</h3>
           <h3>{student.name}</h3>
@@ -25,7 +25,10 @@ const ClassRoster: React.FC<Props> = ({ students }) => {
           <p>Position: {student.position}</p>
           <Link href={`/students/${student.id}`}>more</Link>
         </div>
-      ))}
+      ))} */}
+      <h2>名前:</h2>
+      <p>学籍番号:</p>
+      <p>Position:</p>
     </>
   );
 };
