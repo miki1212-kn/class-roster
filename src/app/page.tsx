@@ -25,7 +25,8 @@ const ClassRosterPage = () => {
         console.log(res);
         //resをjsonに変換
         const data = await res.json();
-        // setClassList(data);
+        setClassList(data);
+        console.log("APIレスポンス:", data); //返ってきてた！
       } catch (error) {
         console.error("エラー:", error);
       } finally {
@@ -45,6 +46,16 @@ const ClassRosterPage = () => {
   return (
     <>
       <h1>クラス名簿</h1>
+      {/* classListのlengthが０より大きい時 */}
+      {classList.length > 0 ? (
+        <ul>
+          {classList.map((student, index) => (
+            <li key={index}>{student.name}</li>
+          ))}
+        </ul>
+      ) : (
+        <p>クラス名簿はありません。</p>
+      )}
     </>
   );
 };
