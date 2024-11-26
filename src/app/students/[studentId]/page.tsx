@@ -7,27 +7,33 @@ const StudentDetails = () => {
   const router = useRouter();
   const { studentId } = router.query; //urlからidを取得
 
-  const [student, setStudent] = useState(null);
+  const [student, setStudent] = useState<any>(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<string>("");
 
   useEffect(() => {
+    if (!studentId) return;
+
     //studentIdがある場合データをフェッチ
-    if (studentId) {
-      setLoading(true);
-      fetch(
-        `http://localhost:8080/classRoster_backend/api/getStudentById.php?id={studentId}`
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          setStudent(data);
-          setLoading(false);
-        })
-        .catch((error) => {
-          setError("学生情報の取得に失敗");
-          setLoading(false);
-        });
+    async function fetchStudentDetails() {
+      try {
+        const res = await fetch(
+          `http://localhost:8080/classRoster_backend/api/getStudentById.php?id=${studentId}`
+        );
+
+        if (!res.ok) {
+          throw new Error(`HTTP error! Status: ${res.status}`);
+        }
+
+        const data = await res.json();
+        setStudent(data);
+      } catch (error) {
+        setError("学生情報の取得に失敗しました");
+      } finally {
+        setLoading(false);
+      }
     }
+    fetchStudentDetails();
   }, [studentId]);
 
   if (loading) {
