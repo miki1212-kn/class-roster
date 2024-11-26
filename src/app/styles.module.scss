@@ -1,0 +1,50 @@
+.container {
+  margin: 30px;
+
+  h1 {
+    margin-bottom: 20px;
+  }
+  .headContainer {
+    width: 100%;
+    // background-color: white;
+    margin: 15px 0;
+    select {
+      font-size: large;
+      padding: 4px;
+    }
+    input {
+      margin-left: 10px;
+      font-size: medium;
+
+      padding: 4px 8px;
+      border-radius: 10px;
+      border: none;
+    }
+  }
+  .classListContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    li {
+      display: flex;
+      background-color: white;
+      color: black;
+      gap: 10px;
+      padding: 10px;
+
+      .id {
+        color: deeppink;
+        font-weight: bold;
+      }
+      .name {
+        font-size: large;
+        font-weight: bold;
+      }
+      button {
+        padding: 2px 8px;
+        border-radius: 10px;
+        border: none;
+      }
+    }
+  }
+}
