@@ -45,6 +45,7 @@ const ClassRosterPage = () => {
 
     if (position === "--") {
       setFilteredClassList(classList); // すべて表示
+      return;
     } else {
       const filtered = classList.filter(
         (student) => student.position === position
