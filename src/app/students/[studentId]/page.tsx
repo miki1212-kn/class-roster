@@ -2,11 +2,17 @@
 
 // import React, { useReducer } from "react";
 // import Link from "next/link";
+
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 const StudentDetails = () => {
   const router = useRouter();
-  const { studentId } = router.query;
+  const { studentId } = router.query; //urlからstudentIdを取得
+
+  const [student, setStudent] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   return (
     <>

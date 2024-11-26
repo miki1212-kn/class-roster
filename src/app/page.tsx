@@ -2,7 +2,7 @@
 
 import React, { use, useEffect, useState } from "react";
 // import ClassRoster from "./components/ClassRoster";
-// import Link from "next/link";
+import Link from "next/link";
 import styles from "./styles.module.scss";
 
 const ClassRosterPage = () => {
@@ -64,12 +64,16 @@ const ClassRosterPage = () => {
         <ul className={styles.classListContainer}>
           {classList.map((student, index) => (
             <li key={index}>
-              <p className={styles.id}>{student.id}</p>
-              <p className={styles.name}>{student.name}</p>
-              <p className={styles.studentNumber}>{student.studentNumber}</p>
-              <p className={styles.position}>{student.position}</p>
+              <div className={styles.classListWrap}>
+                <p className={styles.id}>{student.id}</p>
+                <p className={styles.name}>{student.name}</p>
+                <p className={styles.studentNumber}>{student.studentNumber}</p>
+                <p className={styles.position}>{student.position}</p>
+              </div>
 
-              <button>more</button>
+              <Link href={`/students/${student.id}`} className={styles.moreBtn}>
+                more
+              </Link>
             </li>
           ))}
         </ul>
