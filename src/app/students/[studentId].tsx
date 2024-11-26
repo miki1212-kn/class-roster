@@ -40,3 +40,21 @@
 // export default StudentDetail;
 
 //は？
+
+// pages/students/[id].tsx
+import { useRouter } from "next/router";
+
+const StudentDetailPage = () => {
+  const router = useRouter();
+  const { id } = router.query; // 動的に渡されたidを取得
+
+  return (
+    <div>
+      <h1>学生詳細ページ</h1>
+      <p>学生ID: {id}</p>
+      {/* 詳細な情報をここに表示 */}
+    </div>
+  );
+};
+
+export default StudentDetailPage;
