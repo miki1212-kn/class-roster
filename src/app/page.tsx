@@ -52,6 +52,7 @@ const ClassRosterPage = () => {
       <div className={styles.headContainer}>
         <form>
           <select name="position" id="position">
+            <option value="--">--</option>
             <option value="designer">designer</option>
             <option value="engineer">engineer</option>
             <option value="directer">directer</option>
