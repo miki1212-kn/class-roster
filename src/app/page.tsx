@@ -36,7 +36,7 @@ const ClassRosterPage = () => {
     fetchClassList();
   }, []);
 
-  // 選択肢が変更されたときのハンドラー
+  // 選択肢が変更されたときのハンドラ
   const handlePositionChange = (
     event: React.ChangeEvent<HTMLSelectElement>
   ) => {
